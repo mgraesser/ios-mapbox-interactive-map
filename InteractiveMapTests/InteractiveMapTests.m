@@ -2,7 +2,7 @@
 //  InteractiveMapTests.m
 //  InteractiveMapTests
 //
-//  Created by Mass Defect on 6/26/13.
+//  Created by Lonny Gomes on 6/26/13.
 //  Copyright (c) 2013 Lonny Gomes. All rights reserved.
 //
 

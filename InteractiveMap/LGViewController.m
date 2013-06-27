@@ -2,7 +2,7 @@
 //  LGViewController.m
 //  InteractiveMap
 //
-//  Created by Mass Defect on 6/26/13.
+//  Created by Lonny Gomes on 6/26/13.
 //  Copyright (c) 2013 Lonny Gomes. All rights reserved.
 //
 
@@ -48,7 +48,10 @@
         NSString *formattedOutput = [source formattedOutputOfType:RMInteractiveSourceOutputTypeTeaser
                                                          forPoint:point
                                                         inMapView:mapView];
-        NSLog(@"Output:%@", formattedOutput);
+        
+        UIAlertView *outputAlert = [[UIAlertView alloc] initWithTitle:@"Interactive output" message:formattedOutput delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [outputAlert show];
+        
 //        if (formattedOutput && [formattedOutput length])
 //        {
 //            // parse the country name out of the content
