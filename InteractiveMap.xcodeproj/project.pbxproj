@@ -28,6 +28,9 @@
 		8A98B034177BC67B009DF933 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98B033177BC67B009DF933 /* QuartzCore.framework */; };
 		8A98B036177BC68D009DF933 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98B035177BC68D009DF933 /* libz.dylib */; };
 		8A98B038177BC697009DF933 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A98B037177BC697009DF933 /* libsqlite3.dylib */; };
+		8A98B03A177BC766009DF933 /* MapBox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A98B039177BC766009DF933 /* MapBox.bundle */; };
+		8A98B03D177BD2C0009DF933 /* geography-class.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 8A98B03C177BD2C0009DF933 /* geography-class.mbtiles */; };
+		8A98B040177BD370009DF933 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A98B03F177BD370009DF933 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,10 @@
 		8A98B033177BC67B009DF933 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A98B035177BC68D009DF933 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8A98B037177BC697009DF933 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8A98B039177BC766009DF933 /* MapBox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MapBox.bundle; path = MapBox.framework/Versions/A/Resources/MapBox.bundle; sourceTree = "<group>"; };
+		8A98B03C177BD2C0009DF933 /* geography-class.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = "geography-class.mbtiles"; sourceTree = "<group>"; };
+		8A98B03E177BD370009DF933 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../NSData+Base64.h"; sourceTree = "<group>"; };
+		8A98B03F177BD370009DF933 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "../NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +109,15 @@
 		8A98AFE6177BC541009DF933 = {
 			isa = PBXGroup;
 			children = (
+				8A98B03C177BD2C0009DF933 /* geography-class.mbtiles */,
+				8A98B039177BC766009DF933 /* MapBox.bundle */,
 				8A98B037177BC697009DF933 /* libsqlite3.dylib */,
 				8A98B035177BC68D009DF933 /* libz.dylib */,
 				8A98B033177BC67B009DF933 /* QuartzCore.framework */,
 				8A98B031177BC672009DF933 /* CoreLocation.framework */,
 				8A98AFF8177BC541009DF933 /* InteractiveMap */,
 				8A98B01C177BC542009DF933 /* InteractiveMapTests */,
+				8A98B041177BD37E009DF933 /* Categories */,
 				8A98AFF1177BC541009DF933 /* Frameworks */,
 				8A98AFF0177BC541009DF933 /* Products */,
 			);
@@ -178,6 +188,16 @@
 				8A98B01F177BC542009DF933 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A98B041177BD37E009DF933 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8A98B03E177BD370009DF933 /* NSData+Base64.h */,
+				8A98B03F177BD370009DF933 /* NSData+Base64.m */,
+			);
+			name = Categories;
+			path = InteractiveMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +277,8 @@
 				8A98B007177BC541009DF933 /* Default@2x.png in Resources */,
 				8A98B009177BC541009DF933 /* Default-568h@2x.png in Resources */,
 				8A98B00F177BC541009DF933 /* LGViewController.xib in Resources */,
+				8A98B03A177BC766009DF933 /* MapBox.bundle in Resources */,
+				8A98B03D177BD2C0009DF933 /* geography-class.mbtiles in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +316,7 @@
 				8A98AFFF177BC541009DF933 /* main.m in Sources */,
 				8A98B003177BC541009DF933 /* LGAppDelegate.m in Sources */,
 				8A98B00C177BC541009DF933 /* LGViewController.m in Sources */,
+				8A98B040177BD370009DF933 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InteractiveMap/InteractiveMap-Prefix.pch";
 				INFOPLIST_FILE = "InteractiveMap/InteractiveMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -427,6 +451,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InteractiveMap/InteractiveMap-Prefix.pch";
 				INFOPLIST_FILE = "InteractiveMap/InteractiveMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
